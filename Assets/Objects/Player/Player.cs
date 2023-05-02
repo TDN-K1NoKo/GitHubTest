@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float Speed;
+    public float Speed,JumpPower;
     Rigidbody rb;
+    bool touchGround;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -16,11 +18,19 @@ public class Player : MonoBehaviour
         Move();
     }
 
-    void Move()//Player‚Ì“®‚­ˆ—
+    void Move()//Playerâ€šÃŒâ€œÂ®â€šÂ­ÂË†â€”Â
     {
         float x = Input.GetAxis("Horizontal") * Speed;
         float z = Input.GetAxis("Vertical") * Speed;
         Vector3 moveVector = new Vector3(x,0,z)* Time.fixedDeltaTime;
         rb.velocity = moveVector;
     }
+
+    void Jump()
+    {
+        if(!touchGround) return;
+        rb.
+    }
+
+    
 }

@@ -13,17 +13,18 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Move();
+        Jump();
     }
 
     void Move()//Player‚Ì“®‚­ˆ—
     {
         float x = Input.GetAxis("Horizontal") * Speed;
         float z = Input.GetAxis("Vertical") * Speed;
-        Vector3 moveVector = new Vector3(x,0,z)* Time.fixedDeltaTime;
-        rb.velocity = moveVector;
+        Vector3 moveVector = new Vector3(x,0,z);
+        rb.velocity = moveVector * Time.fixedDeltaTime;
     }
 
     void Jump()
@@ -31,6 +32,4 @@ public class Player : MonoBehaviour
         if(!touchGround) return;
         rb.
     }
-
-    
 }

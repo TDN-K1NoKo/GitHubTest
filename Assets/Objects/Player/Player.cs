@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float Speed,JumpPower;
+    public int Hp;
     Rigidbody rb;
     bool touchGround;
 
@@ -31,5 +32,17 @@ public class Player : MonoBehaviour
     {
         if(!touchGround) return;
         rb.
+    }
+
+    void Damage()
+    {
+        Hp--;
+        if(Hp =< 0)
+            Die();
+    }
+
+    void Die()
+    {
+        Destory(gameobject);
     }
 }

@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     void Jump()
     {
         if(!touchGround) return;
-        rb.
+        rb.velocity = Vector3.up * JumpPower;
     }
 
     void Damage()
